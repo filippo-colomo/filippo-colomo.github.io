@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+  <HEAD>
+    <TITLE> COVID-19 outbreak in Italy
+</TITLE>
+  </HEAD>
+ </HEAD>
+ <BODY
+  BGCOLOR="#FFFFFF"
+   >
+
+   <!------------------------->
+<font face="arial">
+
+<P>
+<center>
+  <H1>
+    On the COVID-19 outbreak in Italy
+  </H1>
+  <H2>
+    <a href="..">Filippo Colomo</a>
+    </h2>
+    <h2><i>(<a href="http://www.fi.infn.it">INFN, Florence</a>
+    & <a href="https://www.fisica.unifi.it/">DIPFA</a>, <a href="https://www.unifi.it/">UniFI</a>)</i>
+  </H2>
+</center>
+</P>
+
+<HR>
+
+<P><font size="+2">
+<UL><LI> The subsequent analysis is based on
+the <a href="https://github.com/pcm-dpc/COVID-19/tree/master/dati-andamento-nazionale">data
+provided by Protezione Civile</a>.
+<br><LI> Data timeseries start on February 24, 2020 (hereafter, days
+`-5 of March').
+<br><LI>The analysis has been done using Wolfram Mathematica.  The
+    code we used is available <a href="corona.nb">here</a>.
+<br><LI>We fit cumulative data (cumulative number of confirmed cases,
+or of fatalities) with
+the <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic
+function</a> <font color="blue"> (blue)</font> and
+the <a href="https://en.wikipedia.org/wiki/Error_function">error
+function</a> <font color="green"> (green)</font>.
+<br><LI> We fit daily data (number of infectious daily fatalities) with
+the <a href="https://en.wikipedia.org/wiki/Logistic_distribution">logistic
+distribution</a> <font color="blue">(blue)</font> and
+the <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal
+distribution</a> <font color="green">(green)</font>.
+<br><LI>In the best fit procedure, we assume that data of
+magnitude <font color="blue">n</font> are affected by an
+error <font color="blue"> &plusmn; <span>&radic;</span> n </font>.
+<br><LI> Only the first part of the data (<b>black dots</b>), till the
+date indicated in each plot, is used for the fit.
+<br><LI> Remaining data (<font color="red">red dots</font>)
+are <b>NOT</b> used for the fit, but just reported as a check of the
+predictivity of the two curves.
+<br><LI>For each plot we report:
+    <UL>
+      <LI>"date" is the date of the best fit: only data earlier than
+      "date" have been used (NB: "33 March" means "2 April", etc.);
+	<BR><LI>"t<sub>0</sub>" is the best fit value for the date of
+	 the peak (or, for cumulative data, of the inflection point),
+	 for the considered quantity;
+	<BR><LI>"A" is the best fit value at peak (or, for cumulative
+	data, at inflection point), for the considered quantity.
+    </UL>
+<BR> <LI>The analysis suggests that, when the outbreak <b>is still at
+its early stages </b> (say, before its peak), fits of available
+empirical data by the error function (or normal distribution) could be
+more predictive than those by the logistic function (or logistic
+distribution, respectively).
+<LI><B>Note added on 2 April 2020: </B> concerning
+<a href="#DF">daily fatalities</a>, whose peak is presumably already
+behind us, in the most recent fit, the logistic distribution is
+starting to perform better than the Gaussian distribution.
+<LI><B>Note added on 3 April 2020: </B> Having now sufficient data, we
+have made a <a href="#check">check of the compliance</a> of fits made
+one/two/three weeks ago with subsequent data.
+</UL>
+</font>
+</P>
+<HR>
+
+<!-- Prima tabella figure (CUMULATIVE CONFIRMED CASES) -->
+<BR>
+<center>
+<h2>Cumulative confirmed cases</h2>
+</center>
+<!------------------------------------------------------->
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+      <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="figCC_8.png" alt=""
+                height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figCC_13.png" alt=""
+		height="500" width="600"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><img src="figCC_18.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figCC_23.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	<tr>
+          <td align="center" valign="top"><img src="figCC_28.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figCC_33.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+    </table>
+<!-- Seconda tabella figure (CUMULATIVE FATALITIES) -->
+<BR>
+<center>
+<h2>Cumulative fatalities</h2>
+</center>
+<!------------------------------------------------------->
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+      <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="figCF_8.png" alt=""
+                height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figCF_13.png" alt=""
+		height="500" width="600"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><img src="figCF_18.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figCF_23.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	 <tr>
+          <td align="center" valign="top"><img src="figCF_28.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img  src="figCF_33.png" alt="" 
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+    </table>
+<!-- Terza tabella figure (INFECTIOUS) -->
+<BR>
+<center>
+<h2>Infectious</h2>
+</center>
+<!------------------------------------------------------->
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+      <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="figDI_8.png" alt=""
+                height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_13.png" alt=""
+		height="500" width="600"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><img src="figDI_18.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_23.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	 <tr>
+          <td align="center" valign="top"><img src="figDI_28.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img   src="figDI_33.png" alt=""
+              height="500" width="600"><br> 
+          </td>
+        </tr>
+	     </tbody>
+    </table>
+   <!-- Quarta tabella figure (DAILY FATALITIES) -->
+<BR>
+<center>
+<h2><a id="DF">Daily fatalities</a></h2>
+</center>
+<!------------------------------------------------------->
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+      <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="figDF_8.png" alt=""
+                height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDF_13.png" alt=""
+		height="500" width="600"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top"><img src="figDF_18.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDF_23.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	 <tr>
+          <td align="center" valign="top"><img src="figDF_28.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img   src="figDF_33.png" alt=""
+              height="500" width="600"><br> 
+          </td>
+        </tr>
+	     </tbody>
+</table>
+
+<!-- Quinta tabella figure (check) -->
+<BR>
+<center>
+<h2><a id="check">Check of fits at a given date against subsequent
+    data</a></h2>
+<br>
+<h3> Best fits of 12 March 2020, against subsequent data till April 16</h3>
+      </center>
+
+<!------------------------------------------------------->
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+  <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="figCC_12_35.png" alt=""
+                height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_12_35.png" alt=""
+		height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+</table>
+
+<center>
+<h3> Best fits of 22 March 2020, against subsequent data till April 16</h3>
+</center>
+
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+  <tbody>	
+        <tr>
+          <td align="center" valign="top"><img src="figCC_22_25.png" 
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_22_25.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+</table>
+<center>
+<h3> Best fits of 32 March (April 1) 2020, against subsequent data till April 16</h3>
+</center>
+
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+  <tbody>	
+        <tr>
+          <td align="center" valign="top"><img src="figCC_32_15.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_32_15.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+</table><center>
+<h3> Best fits of 42 March (April 11) 2020, against subsequent data till April 16</h3>
+</center>
+
+<table cellspacing="2" cellpadding="2" border="1" width="100%">
+  <tbody>	
+        <tr>
+          <td align="center" valign="top"><img src="figCC_42_5.png" alt=""
+					       height="500" width="600"><br>
+          </td>
+          <td align="center" valign="top"><img src="figDI_42_5.png" alt=""
+              height="500" width="600"><br>
+          </td>
+        </tr>
+	     </tbody>
+</table>
+<!--	Fine tabella figure	-->
+    <br>
+  </body>
+</html>
+
